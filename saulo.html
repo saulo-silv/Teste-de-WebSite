@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="Imagens/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Imagens/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Imagens/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <title>Saulo</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600;1,700&family=Mulish:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.root{
+    --font-primary: "Baloo Da 2", serif;
+    --font-secundary:"Josefin Slab", serif;
+    --font-action: "Mulish", serif;
+
+}
+
+.hamburguer{
+    /*background-color: red; */    
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    z-index: 100;
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    
+}
+
+.line{
+    width: 100%;
+    height: .1rem;
+    background-color: #fff;
+    box-shadow: 0.1rem 0.1rem 1px #000;
+
+
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.img-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    animation: zoom 20s;
+
+}
+
+.banner{
+    position: absolute;
+    top:30%;
+    left:15%;
+    
+}
+.banner h1{
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-family: var(--font-primary);
+    font-weight: 200;
+    text-shadow: .3 rem .4rem 2px rgba(0,0,0,.4);
+    line-height: 3.5rem;
+    margin-bottom: 2rem;
+    opacity:0;
+    animation: moveBanner 1s 0.5s forwards;
+}
+
+.banner p{
+    font-family: var(--font-secundary);
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: .2rem .2rem rgba(0,0,0, .4);
+    margin-bottom: 2rem;
+    animation: moveBanner 1s 0.7s forwards;
+
+}
+
+.banner button{
+    font-family: var(--font-action);
+    color: #ffffff;
+    text-transform:uppercase;
+    letter-spacing: .1rem;
+    background: red;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #493240, #0787f8);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #493240, #0787f8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    animation: moveBanner 1s 0.9s forwards;
+}
+
+.banner button:hover{
+    opacity: 0.8;
+    color:black;
+}
+
+@keyframes zoom{
+    0%{
+        transform: scale(1.3);
+        
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes moveBanner{
+    0%{
+        transform: translateY(10rem) rotateY(-30deg);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0) rotateY(0);
+    }
+}
+
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    top:0;
+    right: 0;
+
+}
+
+
+.menu{
+    position: absolute;
+    top: 40%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.menu-item{
+    text-align: center;
+    margin-bottom: .4rem;
+}
+
+.menu-link{
+    font-family: var(--font-action);
+    font-size: 2rem;
+    color: #555;
+    transition: color 1s;
+}
+
+.menu-link:hover{
+    color: #0787f8 ;
+
+}
+
+.social-media{    
+    position: absolute;
+    bottom: 2rem;
+    width:100%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.social-media i{
+    color:rgb(102, 9, 121);
+    height: 2.5rem;
+    width: 2.5 rem;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="hamburguer">
+            <div class="line" id="line1"></div>
+            <div class="line" id="line2"></div>
+            <div class="line" id="line3"></div>
+        </div>
+        
+        <header>
+            <div class="img-wrapper">
+                <img src="Imagens/BackGround.jpg" alt="">
+            </div>
+            <div class="banner">
+                <h1>Web Developer </h1>
+                <p>Saulo Silva</p>
+                <button>Saiba Mais</button>
+            </div>
+        </header>
+        <div class="sidebar">
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+                    <li class="menu-item"><a href="#" class="menu-link">Conhecimento</a></li>
+                    <li class="menu-item"><a href="#" class="menu-link">Projetos</a></li>
+                    <li class="menu-item"><a href="#" class="menu-link">Contato</a></li>
+                    <li class="menu-item"><a href="#" class="menu-link">Orçamento</a></li>
+                   
+                       
+                    
+                </ul>
+            </nav>
+            <div class="social-media">
+                <a href="#"><i class="fab fa"></i></a>
+                <a href="#"><i class="fab fa"></i></a>
+                <a href="#"><i class="fab fa"></i></a>
+            </div>
+        </div>
+</body>
+</html>
